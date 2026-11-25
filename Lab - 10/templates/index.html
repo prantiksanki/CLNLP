@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indic Low-Resource NMT</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>Low-Resource Indic Translator</h1>
+      <p class="sub">CLNLP Experiment 10 · NLLB-200 fine-tuned on the WMT 2026 Indic MT shared-task data</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="controls">
+        <label class="field">
+          <span>Language pair</span>
+          <select id="lang">
+            {% for l in languages %}
+            <option value="{{ l.key }}" {% if l.key == 'as' %}selected{% endif %}>
+              English ⇄ {{ l.name }}{% if not l.usable %} (train first){% endif %}
+            </option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="field">
+          <span>Model</span>
+          <select id="model">
+            <option value="auto">Auto (fine-tuned if available)</option>
+            <option value="finetuned">Fine-tuned NLLB-200</option>
+            <option value="base">Zero-shot NLLB-200</option>
+          </select>
+        </label>
+        <div id="langInfo" class="badges"></div>
+      </div>
+
+      <div class="panes">
+        <div class="pane">
+          <div class="pane-head"><span id="srcLabel">English</span><span id="count" class="muted">0 / {{ max_chars }}</span></div>
+          <textarea id="source" maxlength="{{ max_chars }}" placeholder="Type or paste text here…"></textarea>
+        </div>
+        <button id="swap" class="swap" title="Swap direction" aria-label="Swap direction">⇄</button>
+        <div class="pane">
+          <div class="pane-head"><span id="tgtLabel">Assamese</span><button id="copy" class="link">Copy</button></div>
+          <textarea id="target" readonly placeholder="Translation appears here"></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div id="examples" class="examples"></div>
+        <button id="translate" class="primary">Translate <kbd>Ctrl ↵</kbd></button>
+      </div>
+      <p id="status" class="status muted" role="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>Evaluation results</h2>
+      <p class="muted">Scores on each language's held-out test split (written by <code>python nmt.py train</code>).
+        BLEU and chrF++: higher is better. TER: lower is better.</p>
+      {% set any_results = namespace(v=false) %}
+      {% for l in languages if l.results.get('baseline') or l.results.get('finetuned') %}
+      {% set any_results.v = true %}
+      <h3>English ⇄ {{ l.name }}</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Model</th><th>Direction</th><th>BLEU</th><th>chrF++</th><th>TER</th>{% if l.results.get('finetuned', {}).get('scores', {}).get('en2x', {}).get('COMET') %}<th>COMET</th>{% endif %}</tr></thead>
+          <tbody>
+          {% for key in ['baseline', 'finetuned'] if l.results.get(key) %}
+            {% set r = l.results[key] %}
+            {% for d, s in r.scores.items() %}
+            <tr>
+              <td>{{ r.model }}</td>
+              <td>{{ 'English → ' ~ l.name if d == 'en2x' else l.name ~ ' → English' }}</td>
+              <td>{{ s.BLEU }}</td><td>{{ s['chrF++'] }}</td><td>{{ s.TER }}</td>
+              {% if s.COMET %}<td>{{ s.COMET }}</td>{% endif %}
+            </tr>
+            {% endfor %}
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% if l.results.get('training') %}
+      {% set t = l.results.training %}
+      <p class="muted small">Fine-tuned on {{ t.train_pairs }} sentence pairs ({{ t.train_examples }} examples, both directions),
+        {{ t.epochs }} epoch(s), batch {{ t.batch_size }}, lr {{ t.learning_rate }}, {{ t.minutes }} min.</p>
+      {% endif %}
+      {% set best = l.results.get('finetuned') or l.results.get('baseline') %}
+      {% if best.samples %}
+      <details>
+        <summary>Sample translations ({{ best.model }})</summary>
+        <div class="table-wrap">
+          <table class="samples">
+            <thead><tr><th>English (reference)</th><th>{{ l.name }} (reference)</th><th>English → {{ l.name }}</th><th>{{ l.name }} → English</th></tr></thead>
+            <tbody>
+            {% for s in best.samples %}
+              <tr><td>{{ s.english }}</td><td>{{ s.other }}</td><td>{{ s.en2x }}</td><td>{{ s.x2en }}</td></tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </details>
+      {% endif %}
+      {% endfor %}
+      {% if not any_results.v %}
+      <p class="empty">No results yet. Train a model, e.g. <code>python nmt.py train --lang as --max-train-samples 20000</code>,
+        and the scores will show up here.</p>
+      {% endif %}
+    </section>
+  </main>
+
+  <footer class="wrap muted small">
+    Base model: <code>{{ base_model }}</code> · Data: WMT 2026 Shared Task on Low-Resource Indic Language Translation
+  </footer>
+
+  <script>window.LANGUAGES = {{ languages|tojson }};</script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

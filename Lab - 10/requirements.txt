@@ -1,0 +1,23 @@
+# CLNLP Experiment 10 - Low-Resource Neural Machine Translation
+# Install with:  pip install -r requirements.txt
+
+# deep learning / NMT model (NLLB-200)
+torch>=2.1
+transformers>=4.46
+accelerate>=1.1.0
+sentencepiece>=0.2.0
+datasets>=2.19
+
+# data download & reading (WMT26 files are .csv / .xlsx on Google Drive)
+gdown>=5.1
+pandas>=2.0
+openpyxl>=3.1
+
+# evaluation metrics: BLEU, chrF++, TER
+sacrebleu>=2.4
+
+# website
+flask>=3.0
+
+# optional - COMET metric (python nmt.py train --comet); large install:
+# unbabel-comet>=2.2

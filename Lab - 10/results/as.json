@@ -1,0 +1,353 @@
+{
+  "language": "Assamese",
+  "key": "as",
+  "baseline": {
+    "model": "zero-shot NLLB-200 (not fine-tuned)",
+    "model_path": "facebook/nllb-200-distilled-600M",
+    "test_sentences": 500,
+    "scores": {
+      "en2x": {
+        "BLEU": 8.68,
+        "chrF++": 32.13,
+        "TER": 91.44,
+        "seconds": 81.1
+      },
+      "x2en": {
+        "BLEU": 20.66,
+        "chrF++": 41.48,
+        "TER": 79.38,
+        "seconds": 44.9
+      }
+    },
+    "samples": [
+      {
+        "english": "Our development partnerships reflect the development priorities of our partner nations.",
+        "other": "আমাৰ বিকাশৰ অংশীদাৰীসকলে আমাৰ অংশীদাৰী জাতিবোৰৰ বিকাশৰ প্ৰাথমিতিপ্ৰতিফলিত কৰে।",
+        "en2x": "আমাৰ উন্নয়নমূলক অংশীদাৰিত্বই আমাৰ অংশীদাৰ ৰাষ্ট্ৰসমূহৰ উন্নয়নমূলক অগ্রাধিকাৰসমূহ প্ৰতিফলিত কৰে।",
+        "x2en": "Our development partners reflect the priorities of the development of our partner nations."
+      },
+      {
+        "english": "Where necessary, fellow worshipers gladly helped to bear the burden of such an extended stay.",
+        "other": "তেওঁলোকৰ আৱশ্যকতাবোৰক পূৰ কৰিবলৈ তাত থকা আন উপাসকসকলে আনন্দেৰে সাহাৰ্য্য আগবঢ়াইছিল।",
+        "en2x": "[সম্পাদনা কৰক]",
+        "x2en": "The other worshipers there gladly provided for their needs."
+      },
+      {
+        "english": "In the Balkans, fierce ethnic fighting cost the lives of almost 250,000 people, and prolonged guerrilla warfare in Colombia has left 100,000 dead.",
+        "other": "(মীখা ৬: ৮) সেই পৰামৰ্শবোৰক জানিবলৈচেষ্টা কৰা আৰু সেইমতে চলাটো সঁচাকৈ বুদ্ধিমানৰ কাম হ’ব।",
+        "en2x": "বাল্কান অঞ্চলত হিংসাত্মক জাতিগত সংঘাতত প্ৰায় ২৫০,০০০ জন লোকে প্ৰাণ হেৰুৱালে আৰু কলম্বিয়াত দীৰ্ঘদিনীয়া গাৰিলা যুদ্ধত ১০০,০০০ জন লোক নিহত হৈছে।",
+        "x2en": "(Micah 6:8) Really, it is wise to seek out such counsel and to follow it."
+      },
+      {
+        "english": "And if the woman will not be willing to follow thee, then thou shalt be clear from this my oath: only bring not my son thither again.",
+        "other": "যদি কোনো ছোৱালী তোমাৰ লগত আহিবলৈ মান্তি নহয়, তেন্তে তুমি এই শপতৰ পৰা মুক্ত হ’বা; কিন্তু মোৰ পুত্ৰক হ’লে তালৈ পুনৰাই নিনিবা।",
+        "en2x": "কিন্তু সেই মহিলাই যদি তোমাৰ পাছে পাছে যাবলৈ সন্মত নহয়, তেনেহলে মোৰ এই শপত-পত্ৰৰ পৰা তুমি মুক্ত হ'বা; কিন্তু মোৰ পুত্ৰক সেই ঠাইলৈ পুনৰায় আনিব নালাগে।",
+        "x2en": "And if the girl will not come with thee, thou shalt be set free from this oath; but if she be my son, thou shalt not bring her again."
+      },
+      {
+        "english": "a very tall tower or similar building with a flashing light to warn and guide ships at sea.",
+        "other": "সাগৰৰ পাৰত থকা এটা অতি ওখ স্তম্ভ। ইয়াৰ পৰা পঠিওৱা উজ্বল পোহৰৰ সহায়েৰে জাহাজ আদিক দিগদৰ্শন কৰা হয়।",
+        "en2x": "সাগৰত থকা জাহাজসমূহক সতৰ্ক কৰিবলৈ আৰু পৰিচালনা কৰিবলৈ এটা জ্বলি থকা পোহৰ থকা এটা অতি উচচ টাৱাৰ বা তেনেধৰণৰ বিল্ডিং।",
+        "x2en": "And there was a pillar on the seashore, and there was a bright light from it, which guided the ship."
+      },
+      {
+        "english": "For Jacob my servant s sake, and Israel mine elect, I have even called thee by thy name: I have surnamed thee, though thou hast not known me.",
+        "other": "মোৰ দাস যাকোবৰ আৰু মোৰ মনোনীত ইস্ৰায়েলৰ বাবে, যদিও তুমি মোক নাজানা, তথাপিও মই তোমাক নাম ধৰি মাতিলোঁ আৰু সন্মানীয় উপাধি দিলোঁ।",
+        "en2x": "মোৰ দাস যাকোব আৰু মোৰ মনোনীত ইস্ৰায়েলৰ কাৰণে, মই তোমাক তোমাৰ নামেৰে মাতিছিলোঁ; যদিও তুমি মোক চিনি পোৱা নাছিলা, তথাপিও মই তোমাৰ নাম ৰাখিছিলোঁ।",
+        "x2en": "For my servant Jacob's sake, and for my chosen Israel's sake, though thou hast not known me, I have called thee by name, and have given thee a title."
+      },
+      {
+        "english": "And the Lord said unto Cain, Why art thou wroth? and why is thy countenance fallen?",
+        "other": "তেতিয়া যিহোৱাই কয়িনক ক’লে, কিয় খং কৰিছা আৰু কেলেই বা মুখ ক’লা কৰি আছা?",
+        "en2x": "তেতিয়া যিহোৱাই কয়িনক ক'লে, \"তুমি কিয় ক্ৰুদ্ধ হ'লা? তোমাৰ মুখ কিয় দুৰ্ব্বল হ'ল?",
+        "x2en": "And Jehovah said to Cain, Why art thou angry, and why doest thou shudder?"
+      },
+      {
+        "english": "Let us hear the conclusion of the whole matter Fear God, and keep his commandments for this is the whole duty of man.",
+        "other": "সকলোবোৰতো শুনা হ’ল এতিয়া আহাঁ, আমি সকলোৱে সাৰ কথা শুনো। ঈশ্বৰলৈ ভয় ৰাখা, আৰু তেওঁৰ আজ্ঞাবিলাক পালন কৰা; কিয়নো মানুহৰ সকলো কৰ্তব্য এয়ে।",
+        "en2x": "এই সকলো বিষয়ৰ সমাপ্তি আমি শুনিম; ঈশ্বৰ ভয় কৰা আৰু তেওঁৰ আজ্ঞাবোৰ পালন কৰা; কিয়নো এয়ে মানুহৰ সকলো কৰ্তব্য।",
+        "x2en": "All things have been heard; now let us all hear the truth: Fear God, and keep his commandments; for this is the whole duty of man."
+      }
+    ]
+  },
+  "training": {
+    "base_model": "facebook/nllb-200-distilled-600M",
+    "train_pairs": 20000,
+    "train_examples": 40000,
+    "epochs": 1.0,
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "minutes": 29.0,
+    "loss_curve": [
+      [
+        50,
+        2.2448
+      ],
+      [
+        100,
+        2.0456
+      ],
+      [
+        150,
+        2.0385
+      ],
+      [
+        200,
+        1.9336
+      ],
+      [
+        250,
+        1.9881
+      ],
+      [
+        300,
+        1.9333
+      ],
+      [
+        350,
+        1.9197
+      ],
+      [
+        400,
+        1.8843
+      ],
+      [
+        450,
+        1.876
+      ],
+      [
+        500,
+        1.8333
+      ],
+      [
+        550,
+        1.8937
+      ],
+      [
+        600,
+        1.8443
+      ],
+      [
+        650,
+        1.8678
+      ],
+      [
+        700,
+        1.8229
+      ],
+      [
+        750,
+        1.8609
+      ],
+      [
+        800,
+        1.8401
+      ],
+      [
+        850,
+        1.8183
+      ],
+      [
+        900,
+        1.8274
+      ],
+      [
+        950,
+        1.7707
+      ],
+      [
+        1000,
+        1.8079
+      ],
+      [
+        1050,
+        1.836
+      ],
+      [
+        1100,
+        1.8007
+      ],
+      [
+        1150,
+        1.8126
+      ],
+      [
+        1200,
+        1.8187
+      ],
+      [
+        1250,
+        1.8034
+      ],
+      [
+        1300,
+        1.7431
+      ],
+      [
+        1350,
+        1.793
+      ],
+      [
+        1400,
+        1.7964
+      ],
+      [
+        1450,
+        1.7881
+      ],
+      [
+        1500,
+        1.7872
+      ],
+      [
+        1550,
+        1.7548
+      ],
+      [
+        1600,
+        1.738
+      ],
+      [
+        1650,
+        1.7891
+      ],
+      [
+        1700,
+        1.7886
+      ],
+      [
+        1750,
+        1.7947
+      ],
+      [
+        1800,
+        1.8292
+      ],
+      [
+        1850,
+        1.7733
+      ],
+      [
+        1900,
+        1.7605
+      ],
+      [
+        1950,
+        1.7578
+      ],
+      [
+        2000,
+        1.7569
+      ],
+      [
+        2050,
+        1.8003
+      ],
+      [
+        2100,
+        1.8051
+      ],
+      [
+        2150,
+        1.7101
+      ],
+      [
+        2200,
+        1.7571
+      ],
+      [
+        2250,
+        1.7501
+      ],
+      [
+        2300,
+        1.6769
+      ],
+      [
+        2350,
+        1.7306
+      ],
+      [
+        2400,
+        1.744
+      ],
+      [
+        2450,
+        1.6946
+      ],
+      [
+        2500,
+        1.7799
+      ]
+    ]
+  },
+  "finetuned": {
+    "model": "fine-tuned NLLB-200",
+    "model_path": "/content/Experiment-10/models/nllb-as",
+    "test_sentences": 500,
+    "scores": {
+      "en2x": {
+        "BLEU": 14.43,
+        "chrF++": 37.9,
+        "TER": 81.75,
+        "seconds": 50.8
+      },
+      "x2en": {
+        "BLEU": 27.79,
+        "chrF++": 46.16,
+        "TER": 69.25,
+        "seconds": 38.4
+      }
+    },
+    "samples": [
+      {
+        "english": "Our development partnerships reflect the development priorities of our partner nations.",
+        "other": "আমাৰ বিকাশৰ অংশীদাৰীসকলে আমাৰ অংশীদাৰী জাতিবোৰৰ বিকাশৰ প্ৰাথমিতিপ্ৰতিফলিত কৰে।",
+        "en2x": "আমাৰ উন্নয়নমূলক অংশীদাৰীত্বই আমাৰ অংশীদাৰ দেশসমূহৰ উন্নয়নৰ অগ্রাধিকাৰসমূহক প্ৰতিফলিত কৰে।",
+        "x2en": "Our development partners reflect the principles of development of our partner nations."
+      },
+      {
+        "english": "Where necessary, fellow worshipers gladly helped to bear the burden of such an extended stay.",
+        "other": "তেওঁলোকৰ আৱশ্যকতাবোৰক পূৰ কৰিবলৈ তাত থকা আন উপাসকসকলে আনন্দেৰে সাহাৰ্য্য আগবঢ়াইছিল।",
+        "en2x": "প্ৰয়োজন হলে সহকৰ্মীসকলে অতিৰিক্ত সময় অতিবাহিত কৰাৰ বাবে সহযোগিতা আগবঢ়াইছিল।",
+        "x2en": "Other worshipers there were eager to help in their needs."
+      },
+      {
+        "english": "In the Balkans, fierce ethnic fighting cost the lives of almost 250,000 people, and prolonged guerrilla warfare in Colombia has left 100,000 dead.",
+        "other": "(মীখা ৬: ৮) সেই পৰামৰ্শবোৰক জানিবলৈচেষ্টা কৰা আৰু সেইমতে চলাটো সঁচাকৈ বুদ্ধিমানৰ কাম হ’ব।",
+        "en2x": "বাল্কান অঞ্চলত হোৱা হিংসাত্মক জাতিগত যুঁজত প্ৰায় ২৫০,০০০ জন লোকে প্ৰাণ হেৰুৱালে আৰু কলম্বিয়াত দীঘলীয়া গাৰেলিয়া যুদ্ধত ১০০,০০০ জন লোকৰ মৃত্যু হল।",
+        "x2en": "(Micah 6: 8) Make an effort to learn these counsels, and it is surely wise to do so."
+      },
+      {
+        "english": "And if the woman will not be willing to follow thee, then thou shalt be clear from this my oath: only bring not my son thither again.",
+        "other": "যদি কোনো ছোৱালী তোমাৰ লগত আহিবলৈ মান্তি নহয়, তেন্তে তুমি এই শপতৰ পৰা মুক্ত হ’বা; কিন্তু মোৰ পুত্ৰক হ’লে তালৈ পুনৰাই নিনিবা।",
+        "en2x": "কিন্তু সেই তিৰোতাই যদি তোমাৰ পাছে পাছে যাবলৈ অসন্মত হয়, তেন্তে মোৰ এই শপত-পত্ৰৰ পৰা তুমি মুক্ত হবা; কেৱল মোৰ পুত্ৰক সেই ঠাইলৈ পুনৰায় অনা নহবা।",
+        "x2en": "And if she will not come with thee, then thou shalt be delivered from this oath: but thou shalt not bring my son to her."
+      },
+      {
+        "english": "a very tall tower or similar building with a flashing light to warn and guide ships at sea.",
+        "other": "সাগৰৰ পাৰত থকা এটা অতি ওখ স্তম্ভ। ইয়াৰ পৰা পঠিওৱা উজ্বল পোহৰৰ সহায়েৰে জাহাজ আদিক দিগদৰ্শন কৰা হয়।",
+        "en2x": "সমুদ্ৰৰ ওপৰত থকা জাহাজবোৰক সতৰ্ক কৰিবলৈ আৰু পথ প্ৰদৰ্শন কৰিবলৈ উজ্জ্বল পোহৰ থকা এটা অতি ওখ টাৱাৰ বা তেনে ধৰণৰ ভৱন।",
+        "x2en": "A very high pillar on the sea shore, where light is sent to guide ships."
+      },
+      {
+        "english": "For Jacob my servant s sake, and Israel mine elect, I have even called thee by thy name: I have surnamed thee, though thou hast not known me.",
+        "other": "মোৰ দাস যাকোবৰ আৰু মোৰ মনোনীত ইস্ৰায়েলৰ বাবে, যদিও তুমি মোক নাজানা, তথাপিও মই তোমাক নাম ধৰি মাতিলোঁ আৰু সন্মানীয় উপাধি দিলোঁ।",
+        "en2x": "মোৰ দাস যাকোবৰ কাৰণে, আৰু মোৰ মনোনীত ইস্ৰায়েলৰ কাৰণে, মই তোমাক তোমাৰ নামেৰে মাতিছিলোঁ; যদিও তুমি মোক নাজানা, তথাপিও মই তোমাৰ নাম ৰাখিছিলোঁ।",
+        "x2en": "For my servant Jacob s sake, and for my chosen Israel s sake have I called thee by name, and by honour."
+      },
+      {
+        "english": "And the Lord said unto Cain, Why art thou wroth? and why is thy countenance fallen?",
+        "other": "তেতিয়া যিহোৱাই কয়িনক ক’লে, কিয় খং কৰিছা আৰু কেলেই বা মুখ ক’লা কৰি আছা?",
+        "en2x": "তেতিয়া যিহোৱাই কয়িনক কলে, তুমি কিয় ক্ৰোধিত হলা? আৰু তোমাৰ মুখ কিয় দুৰ্ব্বল হল?",
+        "x2en": "And the Lord said unto Cain, Wherefore art thou wroth, and whisperest?"
+      },
+      {
+        "english": "Let us hear the conclusion of the whole matter Fear God, and keep his commandments for this is the whole duty of man.",
+        "other": "সকলোবোৰতো শুনা হ’ল এতিয়া আহাঁ, আমি সকলোৱে সাৰ কথা শুনো। ঈশ্বৰলৈ ভয় ৰাখা, আৰু তেওঁৰ আজ্ঞাবিলাক পালন কৰা; কিয়নো মানুহৰ সকলো কৰ্তব্য এয়ে।",
+        "en2x": "আহাঁ, আমি সকলো বিষয়ৰ শেষ কথা শুনিম; ঈশ্বৰলৈ ভয় ৰাখা আৰু তেওঁৰ আজ্ঞাবোৰ পালন কৰা; কিয়নো এয়ে মানুহৰ সকলো কৰ্তব্য।",
+        "x2en": "All things have been heard; now let us all hear the truth: Fear God, and keep his commandments: for this is the whole duty of man."
+      }
+    ]
+  }
+}
